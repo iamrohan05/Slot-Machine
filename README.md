@@ -1,1 +1,1 @@
-# Slot-Machine
+# Trying to make a simple Slot machine game.
