@@ -1,6 +1,39 @@
-MAX_LINES=5
+import random
+MAX_LINES=3
 MAX_BET=1000
 MIN_BET=50
+ROWS=3
+COLUMNS=3
+
+symbol_count={
+   "🍇":3,
+   "🍉":4,
+   "🍎":5,
+   "🍊":6
+}
+
+def get_slotmachine_spin(rows,columns,symbols):
+   all_symbols=[]
+   for symbol, symbol_count in symbols.items():
+      for _ in range(symbol_count):
+         all_symbols.append(symbol)
+
+   column=[]
+   for _ in range(columns):
+      col=[]
+      current_symbols=all_symbols[:]
+
+      for _ in range(rows):
+         value=random.choice(current_symbols)
+         current_symbols.remove(value)
+         col.append(value)
+
+      column.append(col)
+
+   return column
+
+
+      
 
 def deposit():
     while True:
@@ -43,6 +76,8 @@ def input_bet():
       else:
          print("Please, enter your bet amount in number")
    return bet_amount
+
+
       
 
 balance=deposit()
