@@ -1,1 +1,1 @@
-# Trying to make a simple Slot machine game.
+# Completed this code on 6/21/2025.
